@@ -1,0 +1,65 @@
+{
+  "name": "dsh-concierge",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Super-agent 双层编排：Router 接活分派统一答复，Worker 在独立目录并行干活，Watchdog 巡检实质进展，状态落 SQLite。",
+  "icon": "icon.svg",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./client": "./client.js"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib/**/*.js",
+    "scripts/*.mjs",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "ROADMAP.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "test": "node test/trunk.mjs",
+    "test:routing": "node test/routing.mjs",
+    "test:watchdog": "node test/watchdog.mjs",
+    "test:notify": "node test/notify.mjs",
+    "test:sources": "node test/sources.mjs",
+    "test:cli": "node test/cli.mjs",
+    "test:hardening": "node test/hardening.mjs",
+    "test:assess": "node test/assess.mjs",
+    "test:github": "node test/github.mjs",
+    "test:migration": "node test/migration.mjs",
+    "test:route": "node test/route.mjs",
+    "source": "node scripts/source.mjs",
+    "test:defer": "node test/defer.mjs",
+    "test:panel": "node test/panel.mjs",
+    "test:client": "node test/client.mjs",
+    "test:preset": "node test/preset.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "super-agent",
+    "orchestration",
+    "router-worker"
+  ]
+}

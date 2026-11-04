@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Super-agent Concierge",
+    "description": "Two-layer orchestration: a Router takes requests and answers once, workers run each ticket in its own directory, a watchdog checks real progress, and every ticket survives a restart in SQLite."
+  }
+}

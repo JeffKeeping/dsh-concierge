@@ -1,0 +1,27 @@
+# dsh-concierge bundle layer.
+#
+# One Host row: the plugin registers superagent_ask / superagent_send /
+# superagent_read / superagent_report / superagent_sources and owns the ticket
+# store, the worker slots, the watchdog probe, and (v2) the Source registry,
+# intake and Channel write side.
+#
+# Webhook Source instances are rows in state.sqlite, not rows here: add one with
+#   node scripts/add-source.mjs --endpoint /concierge/webhook/ops --reply <url> ...
+# so a restart never replays events and the cursor survives.
+- insert:
+    - id: concierge
+      name: dsh-concierge
+      config:
+        concurrency: 3
+        watchdogIntervalMs: 300000
+        routerBatchMs: 800
+        inlineChars: 2400
+        idleFailMs: 1200000
+        loopRepeatLimit: 3
+        blockedRetries: 3
+        semanticAssessment: true
+        assessorSessionId: concierge-assessor
+        assessorTimeoutMs: 60000
+        routerSessionId: concierge-router
+        routerPresetId: concierge-router
+        channelTickMs: 1000

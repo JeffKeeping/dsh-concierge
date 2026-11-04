@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Super-agent 编排",
+    "description": "双层编排：Router 接活分派并统一答复，每个 Ticket 一个独立目录的 Worker 并行干活，Watchdog 巡检真实进展，全部 Ticket 落 SQLite，重启不丢。"
+  }
+}

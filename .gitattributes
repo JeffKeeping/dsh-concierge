@@ -1,0 +1,9 @@
+# The client bundle is fetched by the Host's module loader; keep its bytes LF so a checkout
+# on any platform produces the file the loader already reads.
+*.js   text eol=lf
+*.mjs  text eol=lf
+*.json text eol=lf
+*.yml  text eol=lf
+*.md   text eol=lf
+*.svg  text eol=lf
+*.png  binary

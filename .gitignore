@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Runtime state: a checkout of this plugin never carries a ticket database.
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+concierge.sqlite*
+agent/
+
+# Local test scratch
+probe/
+.ref/
+*.bak
+*.log
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
